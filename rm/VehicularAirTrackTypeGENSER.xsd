@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1"> 
+    <xs:include schemaLocation="AbstractVehicularTrackTypeGENSER.xsd"/>
+    <!--  Version 2.20 -->
+    <!--  Date=7/16/2023 -->
+    
+    <!--  Complex type definitions -->
+    <!--  Default values for xs:minOccurs and xs:maxOccurs are both 1 -->
+    <xs:complexType name="VehicularAirTrackTypeGENSER">
+        <xs:annotation>
+            <xs:documentation>
+                Parent Type: VehicularAirTrackTypeGENSER extends AbstractVehicularTrackTypeGENSER
+                Usage: VehicularAirTrackTypeGENSER is a concrete type which defines the Air Track XML Message
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+             <xs:extension base= "AbstractVehicularTrackTypeGENSER">
+                <xs:sequence>
+                    <xs:element name="isLowElevation" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation> Indicates whether or not the air vehicular track position is
+                                at or below the low elevation boundary. </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="ownshipMunition" type="OwnshipMunitionEnumType" minOccurs="0"
+                        maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation> When set to other than no statement, the track represents a
+                                munition fired by ownship. </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="vehicularIFF_Record" type="VehicularIFF_RecordType" minOccurs="0"
+                        maxOccurs="1">
+                        <xs:annotation>
+                            <xs:documentation> This type contains all IFF attributes for VehicularTrackTypes </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
