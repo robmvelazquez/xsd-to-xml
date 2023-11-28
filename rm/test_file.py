@@ -32,10 +32,15 @@ def generate_random_xml(schema, root_element_name, num_records):
     return ET.ElementTree(root)
 """
 
-xsd_file_path = 'VehicularAirTrackTypeGENSER.xsd'
-output_file_path = 'output.xml'
+xsd_file_path = 'VehicularUnknownTrackTypeGENSER.xsd'
 tree = ET.parse(xsd_file_path)
-root = tree.getroot()
+xsd = tree.getroot()
+
+abstract_file_path = 'AbstractVehicularTrackTypeGENSER.xsd'
+tree = ET.parse(abstract_file_path)
+abstract = tree.getroot()
+
+output_file_path = 'output.xml'
 
 
 def redirect_output_to_xml(file_path):
@@ -81,7 +86,7 @@ def print_elements_names(element, indent=0):
         print_elements_names(child, indent + 1)
 
 
-print_header(root)
-first_complex_type(root)
-print_elements_names(root)
-first_complex_type(root)
+print_header(xsd)
+first_complex_type(xsd)
+print_elements_names(xsd)
+first_complex_type(xsd)
