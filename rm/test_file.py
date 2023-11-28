@@ -59,7 +59,6 @@ def print_header(element):
 #     print(f'<{element.tag.split('}')[-1]}>')
 
 
-# @redirect_output_to_xml('output.xml')
 def print_elements_names(element, indent=0):
     if element.tag.endswith('element') and 'name' in element.attrib:
         with open('output.xml', 'a') as output_file:
