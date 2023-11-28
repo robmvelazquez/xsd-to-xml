@@ -59,6 +59,17 @@ def print_header(element):
 #     print(f'<{element.tag.split('}')[-1]}>')
 
 
+def first_complex_type(element, indent=0):
+    if element.tag.endswith('complexType') and 'name' in element.attrib:
+        with open('output.xml', 'a') as output_file:
+            sys.stdout = output_file
+            print(f"<{element.attrib.get('name')}>")
+            sys.stdout = sys.__stdout__
+
+    for child in element:
+        first_complex_type(child, indent + 1)
+
+
 def print_elements_names(element, indent=0):
     if element.tag.endswith('element') and 'name' in element.attrib:
         with open('output.xml', 'a') as output_file:
@@ -71,4 +82,6 @@ def print_elements_names(element, indent=0):
 
 
 print_header(root)
+first_complex_type(root)
 print_elements_names(root)
+first_complex_type(root)
