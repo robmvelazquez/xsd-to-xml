@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<VehicularUnknownTrackTypeGENSER>
+<?xml version="1.0" encoding="UTF-8"?><VehicularUnknownTrackTypeGENSER>
       <ecefCovariance>placeholder</ecefCovariance>
       <ecefX>placeholder</ecefX>
       <ecefY>placeholder</ecefY>
@@ -54,3 +53,37 @@
    <mode5IsNotClear>placeholder</mode5IsNotClear>
    <mode5IsTimedOut>placeholder</mode5IsTimedOut>
 </VehicularUnknownTrackTypeGENSER>
+<updateReason>7172516237046902112</updateReason>
+<numberSupportingSourceTracks>-7959703928402914115</numberSupportingSourceTracks>
+<identitySource>30409</identitySource>
+<identityRationale>9331</identityRationale>
+<exerciseSource>453</exerciseSource>
+<strength>25041</strength>
+<strengthSource>589</strengthSource>
+<trackKind>-15493</trackKind>
+<trackAuthenticity>-28444</trackAuthenticity>
+<trackStatus>2993</trackStatus>
+<altitudeSourceType>23525</altitudeSourceType>
+<positionSourceType>-17362</positionSourceType>
+<trackDesignation>5754</trackDesignation>
+<crosslinkReason>25295</crosslinkReason>
+<emergencySource>-3053</emergencySource>
+<specialInterest>True</specialInterest>
+<identityConflictInProgress>False</identityConflictInProgress>
+<exerciseConflictInProgress>True</exerciseConflictInProgress>
+<exercise>True</exercise>
+<isExercise>False</isExercise>
+<identityReevaluationRequired>True</identityReevaluationRequired>
+<nonRealTime>True</nonRealTime>
+<lostTrack>True</lostTrack>
+<ownShip>False</ownShip>
+<specialProcessing>True</specialProcessing>
+<troubledTrack>False</troubledTrack>
+<isSelfDefenseInterest>False</isSelfDefenseInterest>
+<identity>-1995523015</identity>
+<identityUpdateTime>-123220363685512118671518927066486160278</identityUpdateTime>
+<identity>-56075893584758196904218173502394553541</identity>
+<creationTime>-155092339636001876038580968377659039434</creationTime>
+<lostTime>-120059776661608193506347169378764483685</lostTime>
+<altitudeValidTime>-16246637105919767913339086741721363824</altitudeValidTime>
+<positionValidTime>-144713138264205663980435270319353239745</positionValidTime>
