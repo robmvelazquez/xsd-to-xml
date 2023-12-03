@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<VehicularAirTrackTypeGENSER>
-     <isLowElevation>placeholder</isLowElevation>
-     <ownshipMunition>placeholder</ownshipMunition>
-     <vehicularIFF_Record>placeholder</vehicularIFF_Record>
-<VehicularAirTrackTypeGENSER>
+<VehicularUnknownTrackTypeGENSER>
+      <ecefCovariance>placeholder</ecefCovariance>
+      <ecefX>placeholder</ecefX>
+      <ecefY>placeholder</ecefY>
+      <ecefZ>placeholder</ecefZ>
+      <ecefIsECEF_Reliable>placeholder</ecefIsECEF_Reliable>
+      <ecefItsVelocityECEF_X>placeholder</ecefItsVelocityECEF_X>
+      <ecefItsVelocityECEF_Y>placeholder</ecefItsVelocityECEF_Y>
+      <ecefItsVelocityECEF_Z>placeholder</ecefItsVelocityECEF_Z>
+      <ecefIsECEF_VelocityReliable>placeholder</ecefIsECEF_VelocityReliable>
+      <isPU_JU>placeholder</isPU_JU>
+      <isCooperatingUnit>placeholder</isCooperatingUnit>
+      <isCommandAndControl>placeholder</isCommandAndControl>
+      <isIntelSpecialProcessing>placeholder</isIntelSpecialProcessing>
+   <updateIFF_Reason>placeholder</updateIFF_Reason>
+   <localDiscreteIdentifier>placeholder</localDiscreteIdentifier>
+   <isSIF_NoResponse>placeholder</isSIF_NoResponse>
+   <specialReplyIndicator>placeholder</specialReplyIndicator>
+   <IFF_ModeCodeUpdateTime>placeholder</IFF_ModeCodeUpdateTime>
+   <IFF_FromPPLI>placeholder</IFF_FromPPLI>
+   <mode1UpdateTime>placeholder</mode1UpdateTime>
+   <mode1Response>placeholder</mode1Response>
+   <mode1Code>placeholder</mode1Code>
+   <mode1Source>placeholder</mode1Source>
+   <mode1IsTimedOut>placeholder</mode1IsTimedOut>
+   <mode1SpecialCode>placeholder</mode1SpecialCode>
+   <mode2UpdateTime>placeholder</mode2UpdateTime>
+   <mode2Response>placeholder</mode2Response>
+   <mode2Code>placeholder</mode2Code>
+   <mode2Source>placeholder</mode2Source>
+   <mode2IsTimedOut>placeholder</mode2IsTimedOut>
+   <mode2SpecialCode>placeholder</mode2SpecialCode>
+   <mode3UpdateTime>placeholder</mode3UpdateTime>
+   <mode3Response>placeholder</mode3Response>
+   <mode3Code>placeholder</mode3Code>
+   <mode3Source>placeholder</mode3Source>
+   <mode3IsTimedOut>placeholder</mode3IsTimedOut>
+   <mode3SpecialCode>placeholder</mode3SpecialCode>
+   <mode3IsSpecialCodeValid>placeholder</mode3IsSpecialCodeValid>
+   <mode4Response>placeholder</mode4Response>
+   <mode4Evaluation>placeholder</mode4Evaluation>
+   <mode4UpdateTime>placeholder</mode4UpdateTime>
+   <mode4Source>placeholder</mode4Source>
+   <mode4IsTimedOut>placeholder</mode4IsTimedOut>
+   <modeCUpdateTime>placeholder</modeCUpdateTime>
+   <modeCHeight_feet>placeholder</modeCHeight_feet>
+   <modeCSource>placeholder</modeCSource>
+   <mode5UpdateTime>placeholder</mode5UpdateTime>
+   <mode5PlatformIdNumber>placeholder</mode5PlatformIdNumber>
+   <mode5NationalOrigin>placeholder</mode5NationalOrigin>
+   <mode5MissionCode>placeholder</mode5MissionCode>
+   <mode5Source>placeholder</mode5Source>
+   <mode5IsNotClear>placeholder</mode5IsNotClear>
+   <mode5IsTimedOut>placeholder</mode5IsTimedOut>
+</VehicularUnknownTrackTypeGENSER>
