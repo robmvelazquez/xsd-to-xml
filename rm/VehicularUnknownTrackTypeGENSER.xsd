@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1">
+    <xs:include schemaLocation="AbstractVehicularTrackTypeGENSER.xsd"/>
+    <!--  Version 2.20 -->
+    <!--  Date=7/16/2023 -->
+    
+    <!--  Complex type definitions -->
+    <!--  Default values for xs:minOccurs and xs:maxOccurs are both 1 -->
+    <xs:complexType name="VehicularUnknownTrackTypeGENSER">
+        <xs:annotation>
+            <xs:documentation>   
+                Parent Type: VehicularUnknownTrackTypeGENSER extends AbstractVehicularTrackTypeGENSER
+                Usage: VehicularUnknownTrackTypeGENSER is a concrete type which defines the Unknown Track XML Message
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="AbstractVehicularTrackTypeGENSER"/>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

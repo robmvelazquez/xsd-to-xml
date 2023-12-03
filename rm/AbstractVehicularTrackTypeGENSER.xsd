@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:include schemaLocation="../CommonTypesGENSER.xsd"/>
+    <!--  Version 2.22 -->
+    <!--  Date=8/18/2023 -->
+
+    <xs:annotation>
+        <xs:documentation>
+            Description: The file declares the AbstractVehicularTrackTypeGENSER and
+            record complexTypes
+            Usage: AbstractVehicularTrackTypeGENSER and the record complexTypes are
+            used for composition of concrete Vehicular complexTypes (which define
+            Vehicular Track XML Messages).
+        </xs:documentation>
+    </xs:annotation>
+
+    <!--  Complex type definitions -->
+    <!--  Default values for xs:minOccurs and xs:maxOccurs are both 1 -->
+    <xs:complexType name="AbstractVehicularTrackTypeGENSER" abstract="true">
+        <xs:annotation>
+            <xs:documentation> 
+                Definition: AbstractVehicularTrackType defines elements common to all VehicularTrackTypes.
+                Usage: Extend AbstractVehicularTrackType to define concrete VehicularTrackTypes. 
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="AbstractBaseTrackTypeGENSER">
+                <xs:sequence>
+                    <xs:sequence>
+                        <xs:element name="ecefCovariance" type="ecefCovarianceTypeGENSER" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation>
+                                    Contains the information for the kinematic error covariance.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefX" type="DataMilesType">
+                            <xs:annotation>
+                                <xs:documentation> Contains the geocentric X coordinate of the track in the ECEF
+                                    frame of reference. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefY" type="DataMilesType">
+                            <xs:annotation>
+                                <xs:documentation> Contains the geocentric Y coordinate of the track in the ECEF
+                                    frame of reference. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefZ" type="DataMilesType">
+                            <xs:annotation>
+                                <xs:documentation> Contains the geocentric Z coordinate of the track in the ECEF
+                                    frame of reference. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefIsECEF_Reliable" type="xs:boolean" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Indicates if x,y and z are reliable. It is considered
+                                    reliable when received or derived from a sensor measurement or from an
+                                    external system (e.g. TDL) that reports the entry. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefItsVelocityECEF_X" type="DataMilesPerSecondType" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Rate of change (velocity) of the geocentric X coordinate.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefItsVelocityECEF_Y" type="DataMilesPerSecondType" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Rate of change (velocity) of the geocentric Y coordinate.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefItsVelocityECEF_Z" type="DataMilesPerSecondType" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Rate of change (velocity) of the geocentric Z coordinate.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="ecefIsECEF_VelocityReliable" type="xs:boolean" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Indicates if x,y and z are reliable. It is considered
+                                    reliable when received or derived from a sensor measurement or from an
+                                    external system (e.g. TDL) that reports the entry. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="isPU_JU" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Indicates whether the track is a PU/JU. True (1) means track
+                                    is a PU/JU. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="isCooperatingUnit" type="xs:boolean" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Indicates whether the system track is a cooperating unit on
+                                    the CEC network. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="isCommandAndControl" type="xs:boolean" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> This field identifies if a JU is a Non C2 or C2 unit.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="isIntelSpecialProcessing" type="xs:boolean" minOccurs="0"
+                            maxOccurs="1">
+                            <xs:annotation>
+                                <xs:documentation> Indicates whether the track contains sensitive data
+                                    originated from a protected source. When set to true, it indicates the track
+                                    information requires special handling and processing as defined by
+                                    MIL-STD-6016. </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+ 
+                    </xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="VehicularIFF_RecordType">
+        <xs:annotation>
+            <xs:documentation>
+                This type contains all IFF attributes for VehicularTrackTypes
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>    
+            <xs:element name="updateIFF_Reason" type="UpdateIFFReasonBitmapEnumType"
+                minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Contains the reasons that a track’s IFF data is being
+                        updated. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="localDiscreteIdentifier" type="xs:unsignedShort" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Locally defined amplifying data concerning a reported object,
+                        or track, with discrete meanings established by the operational commander.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="isSIF_NoResponse" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether Selective Identification Feature (SIF) has
+                        no response. True (1) means no response. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="specialReplyIndicator" type="SpecialReplyEnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the IFF special reply indicator.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IFF_ModeCodeUpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the time of last change in data to any of the IFF
+                        Mode Code attributes. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="IFF_FromPPLI" type="Link16_IFF_FromPPLI_EnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates if any of the IFF data is from a Link-16 PPLI
+                        (Precise Participant Location and Identification) Unit. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode1UpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> The time of last IFF Mode 1 data update. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode1Response" type="IFF_ModeResponseEnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the response validity of the data received for Mode
+                        1. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode1Code" type="xs:unsignedShort" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> This field indicates the Mode 1 Code response (not extended)
+                        of the cooperating IFF target. Mode 1 SIF (not extended) is maintained in 5
+                        bits and usually displayed as two octal digits where the most significant
+                        digit (A) is three (3) bits wide with a range 0 - 7, and the least
+                        significant digit (B) is two (2) bits wide with a range of 0 - 3. 0 = no
+                        statement/no data </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode1Source" type="IFF_SourceIdentifierType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the source of the Mode 1 data. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode1IsTimedOut" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether the Mode 1 data has timed out according to
+                        MIL-STD-6016 timeout requirements. True (1) means the Mode 1 data has timed
+                        out. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode1SpecialCode" type="xs:unsignedShort" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates a special code used for identification for Mode 1.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode2UpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> The time of last IFF Mode 2 data update. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode2Response" type="IFF_ModeResponseEnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the response validity of the data received for Mode
+                        2. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode2Code" type="xs:unsignedShort" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the Mode 2 code that has been received for the
+                        subject track. 0 = no statement/no data </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode2Source" type="IFF_SourceIdentifierType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the source of the Mode 2 data. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode2IsTimedOut" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether the Mode 2 data has timed out according to
+                        MIL-STD-6016 timeout requirements. True (1) means the Mode 2 data has timed
+                        out. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode2SpecialCode" type="xs:unsignedShort" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates a special code used for identification for Mode 2.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3UpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> The time of last IFF Mode 3 data update. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3Response" type="IFF_ModeResponseEnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the response validity of the data received for Mode
+                        3. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3Code" type="xs:unsignedShort" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the Mode 3 code that has been received for the
+                        subject track. 0 = no statement/no data </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3Source" type="IFF_SourceIdentifierType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the source of the Mode 3 data. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3IsTimedOut" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether the Mode 3 data has timed out according to
+                        MIL-STD-6016 timeout requirements. True (1) means the Mode 3 data has timed
+                        out. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3SpecialCode" type="IFF_SourceIdentifierType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates a special code used for identification for Mode 3.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode3IsSpecialCodeValid" type="xs:boolean" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether special code is valid for Mode 3. True (1)
+                        means valid. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode4Response" type="IFF_ModeResponseEnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the response validity of the data received for Mode
+                        4. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode4Evaluation" type="IFF_Mode4EvaluationEnumType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Evaluation of the authenticity of the Mode 4 response.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode4UpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> The time of last IFF Mode 4 data update. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode4Source" type="IFF_SourceIdentifierType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the source of the Mode 4 data. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode4IsTimedOut" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether the Mode 4 data has timed out according to
+                        MIL-STD-6016 timeout requirements. True (1) means the Mode 4 data has timed
+                        out. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="modeCUpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> The time of last IFF Mode C data update. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="modeCHeight_feet" type="xs:unsignedInt" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> This field identifies the height (in feet) reported by the
+                        IFF Mode C sensor of the cooperating IFF target. Aircraft's self-reported
+                        height above sea-level. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="modeCSource" type="IFF_SourceIdentifierType" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the source of the Mode C data. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5UpdateTime" type="UTC_TimeType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> The time of last IFF Mode 5 data update. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5PlatformIdNumber" type="xs:unsignedShort" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> This field identifies that IFF Mode 5 Platform Identification
+                        Number (PIN) for the subject track. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5NationalOrigin" type="xs:unsignedShort" minOccurs="0"
+                maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> This field identifies the Mode 5 IFF national origin for the
+                        subject track. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5MissionCode" type="xs:unsignedShort" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> This field identifies the Mode 5 IFF mission code for the
+                        subject track. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5Source" type="IFF_SourceIdentifierType" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates the source of the Mode 5 data. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5IsNotClear" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether the IFF Mode is not clear for Mode 5. True
+                        (1) means not clear (i.e., ambiguous association to more than one track).
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mode5IsTimedOut" type="xs:boolean" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation> Indicates whether the Mode 5 data has timed out according to
+                        MIL-STD-6016 timeout requirements. True (1) means the Mode 5 data has timed
+                        out. </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
