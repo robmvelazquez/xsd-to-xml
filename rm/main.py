@@ -3,6 +3,5 @@ import functions
 
 functions.xml_declaration(config.xsd)
 functions.header(config.xsd)
-functions.print_elements_names(config.abstract)
+functions.print_list(config.data)
 functions.footer(config.xsd)
-functions.print_list(functions.item_list)
