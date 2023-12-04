@@ -1,89 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?><VehicularUnknownTrackTypeGENSER>
-      <ecefCovariance>placeholder</ecefCovariance>
-      <ecefX>placeholder</ecefX>
-      <ecefY>placeholder</ecefY>
-      <ecefZ>placeholder</ecefZ>
-      <ecefIsECEF_Reliable>placeholder</ecefIsECEF_Reliable>
-      <ecefItsVelocityECEF_X>placeholder</ecefItsVelocityECEF_X>
-      <ecefItsVelocityECEF_Y>placeholder</ecefItsVelocityECEF_Y>
-      <ecefItsVelocityECEF_Z>placeholder</ecefItsVelocityECEF_Z>
-      <ecefIsECEF_VelocityReliable>placeholder</ecefIsECEF_VelocityReliable>
-      <isPU_JU>placeholder</isPU_JU>
-      <isCooperatingUnit>placeholder</isCooperatingUnit>
-      <isCommandAndControl>placeholder</isCommandAndControl>
-      <isIntelSpecialProcessing>placeholder</isIntelSpecialProcessing>
-   <updateIFF_Reason>placeholder</updateIFF_Reason>
-   <localDiscreteIdentifier>placeholder</localDiscreteIdentifier>
-   <isSIF_NoResponse>placeholder</isSIF_NoResponse>
-   <specialReplyIndicator>placeholder</specialReplyIndicator>
-   <IFF_ModeCodeUpdateTime>placeholder</IFF_ModeCodeUpdateTime>
-   <IFF_FromPPLI>placeholder</IFF_FromPPLI>
-   <mode1UpdateTime>placeholder</mode1UpdateTime>
-   <mode1Response>placeholder</mode1Response>
-   <mode1Code>placeholder</mode1Code>
-   <mode1Source>placeholder</mode1Source>
-   <mode1IsTimedOut>placeholder</mode1IsTimedOut>
-   <mode1SpecialCode>placeholder</mode1SpecialCode>
-   <mode2UpdateTime>placeholder</mode2UpdateTime>
-   <mode2Response>placeholder</mode2Response>
-   <mode2Code>placeholder</mode2Code>
-   <mode2Source>placeholder</mode2Source>
-   <mode2IsTimedOut>placeholder</mode2IsTimedOut>
-   <mode2SpecialCode>placeholder</mode2SpecialCode>
-   <mode3UpdateTime>placeholder</mode3UpdateTime>
-   <mode3Response>placeholder</mode3Response>
-   <mode3Code>placeholder</mode3Code>
-   <mode3Source>placeholder</mode3Source>
-   <mode3IsTimedOut>placeholder</mode3IsTimedOut>
-   <mode3SpecialCode>placeholder</mode3SpecialCode>
-   <mode3IsSpecialCodeValid>placeholder</mode3IsSpecialCodeValid>
-   <mode4Response>placeholder</mode4Response>
-   <mode4Evaluation>placeholder</mode4Evaluation>
-   <mode4UpdateTime>placeholder</mode4UpdateTime>
-   <mode4Source>placeholder</mode4Source>
-   <mode4IsTimedOut>placeholder</mode4IsTimedOut>
-   <modeCUpdateTime>placeholder</modeCUpdateTime>
-   <modeCHeight_feet>placeholder</modeCHeight_feet>
-   <modeCSource>placeholder</modeCSource>
-   <mode5UpdateTime>placeholder</mode5UpdateTime>
-   <mode5PlatformIdNumber>placeholder</mode5PlatformIdNumber>
-   <mode5NationalOrigin>placeholder</mode5NationalOrigin>
-   <mode5MissionCode>placeholder</mode5MissionCode>
-   <mode5Source>placeholder</mode5Source>
-   <mode5IsNotClear>placeholder</mode5IsNotClear>
-   <mode5IsTimedOut>placeholder</mode5IsTimedOut>
+      <ecefCovariance>ecefCovarianceTypeGENSER</ecefCovariance>
+      <ecefX>DataMilesType</ecefX>
+      <ecefY>DataMilesType</ecefY>
+      <ecefZ>DataMilesType</ecefZ>
+      <ecefIsECEF_Reliable>boolean</ecefIsECEF_Reliable>
+      <ecefItsVelocityECEF_X>DataMilesPerSecondType</ecefItsVelocityECEF_X>
+      <ecefItsVelocityECEF_Y>DataMilesPerSecondType</ecefItsVelocityECEF_Y>
+      <ecefItsVelocityECEF_Z>DataMilesPerSecondType</ecefItsVelocityECEF_Z>
+      <ecefIsECEF_VelocityReliable>boolean</ecefIsECEF_VelocityReliable>
+      <isPU_JU>boolean</isPU_JU>
+      <isCooperatingUnit>boolean</isCooperatingUnit>
+      <isCommandAndControl>boolean</isCommandAndControl>
+      <isIntelSpecialProcessing>boolean</isIntelSpecialProcessing>
+   <updateIFF_Reason>UpdateIFFReasonBitmapEnumType</updateIFF_Reason>
+   <localDiscreteIdentifier>unsignedShort</localDiscreteIdentifier>
+   <isSIF_NoResponse>boolean</isSIF_NoResponse>
+   <specialReplyIndicator>SpecialReplyEnumType</specialReplyIndicator>
+   <IFF_ModeCodeUpdateTime>UTC_TimeType</IFF_ModeCodeUpdateTime>
+   <IFF_FromPPLI>Link16_IFF_FromPPLI_EnumType</IFF_FromPPLI>
 </VehicularUnknownTrackTypeGENSER>
-<updateReason>7172516237046902112</updateReason>
-<numberSupportingSourceTracks>-7959703928402914115</numberSupportingSourceTracks>
-<identitySource>30409</identitySource>
-<identityRationale>9331</identityRationale>
-<exerciseSource>453</exerciseSource>
-<strength>25041</strength>
-<strengthSource>589</strengthSource>
-<trackKind>-15493</trackKind>
-<trackAuthenticity>-28444</trackAuthenticity>
-<trackStatus>2993</trackStatus>
-<altitudeSourceType>23525</altitudeSourceType>
-<positionSourceType>-17362</positionSourceType>
-<trackDesignation>5754</trackDesignation>
-<crosslinkReason>25295</crosslinkReason>
-<emergencySource>-3053</emergencySource>
+<updateReason>4464910619838586252</updateReason>
+<numberSupportingSourceTracks>-963777939963297554</numberSupportingSourceTracks>
+<identitySource>-3222</identitySource>
+<identityRationale>-28396</identityRationale>
+<exerciseSource>-3284</exerciseSource>
+<strength>13870</strength>
+<strengthSource>-9029</strengthSource>
+<trackKind>2905</trackKind>
+<trackAuthenticity>-27434</trackAuthenticity>
+<trackStatus>10503</trackStatus>
+<altitudeSourceType>-31896</altitudeSourceType>
+<positionSourceType>-10022</positionSourceType>
+<trackDesignation>-30904</trackDesignation>
+<crosslinkReason>17898</crosslinkReason>
+<emergencySource>-11452</emergencySource>
 <specialInterest>True</specialInterest>
 <identityConflictInProgress>False</identityConflictInProgress>
 <exerciseConflictInProgress>True</exerciseConflictInProgress>
 <exercise>True</exercise>
 <isExercise>False</isExercise>
-<identityReevaluationRequired>True</identityReevaluationRequired>
-<nonRealTime>True</nonRealTime>
-<lostTrack>True</lostTrack>
-<ownShip>False</ownShip>
-<specialProcessing>True</specialProcessing>
+<identityReevaluationRequired>False</identityReevaluationRequired>
+<nonRealTime>False</nonRealTime>
+<lostTrack>False</lostTrack>
+<ownShip>True</ownShip>
+<specialProcessing>False</specialProcessing>
 <troubledTrack>False</troubledTrack>
-<isSelfDefenseInterest>False</isSelfDefenseInterest>
-<identity>-1995523015</identity>
-<identityUpdateTime>-123220363685512118671518927066486160278</identityUpdateTime>
-<identity>-56075893584758196904218173502394553541</identity>
-<creationTime>-155092339636001876038580968377659039434</creationTime>
-<lostTime>-120059776661608193506347169378764483685</lostTime>
-<altitudeValidTime>-16246637105919767913339086741721363824</altitudeValidTime>
-<positionValidTime>-144713138264205663980435270319353239745</positionValidTime>
+<isSelfDefenseInterest>True</isSelfDefenseInterest>
+<identity>1329228773</identity>
+<identityUpdateTime>-91816967349919854332845341651068957104</identityUpdateTime>
+<identity>164871410562201882901547954843026904089</identity>
+<creationTime>-78044445932844912670640383414770094880</creationTime>
+<lostTime>-41307880250820793884744937807486663415</lostTime>
+<altitudeValidTime>60216928533914343237260813102497825796</altitudeValidTime>
+<positionValidTime>20381469565580047089289716486342076954</positionValidTime>

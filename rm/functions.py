@@ -1,7 +1,5 @@
 import sys
 import random
-import os
-import xml.etree.ElementTree as ET
 
 
 # Function to redirect print statements to XML file.
@@ -51,10 +49,15 @@ def footer(element, indent=0):
 # Prints all elements with the words 'element' and 'name' to the xml file.
 def print_elements_names(element, indent=0):
     if element.tag.endswith('element') and 'name' in element.attrib:
-        with open('output.xml', 'a') as output_file:
-            sys.stdout = output_file
-            print(' ' * indent + f"<{element.attrib['name']}>" + "placeholder" + f"</{element.attrib['name']}>")
-            sys.stdout = sys.__stdout__
+        # Skips duplicate elements using 'mode' within the element name.
+        if 'mode' not in element.attrib['name']:
+            data_type = element.attrib['type']
+            data_type = data_type.replace('xs:', '')
+            with open('output.xml', 'a') as output_file:
+                sys.stdout = output_file
+                print(
+                    ' ' * indent + f"<{element.attrib['name']}>" + f"{data_type}" + f"</{element.attrib['name']}>")
+                sys.stdout = sys.__stdout__
 
     for child in element:
         print_elements_names(child, indent + 1)
@@ -76,20 +79,6 @@ def generate_random_value(data_type):
         return random.randint(-(2**127), 2**127 -1)
     else:
         raise ValueError(f"Unknown data type: {data_type}")
-
-'''
-# Function to add items to items_list[]
-def add_item(name, data_type):
-    from config import output_file_path, items_list
-    with open('output.xml', 'a') as output_file:
-        sys.stdout = output_file
-        root = ET.Element('items')
-        for item in items_list:
-            item_element = ET.SubElement(root, 'item')
-            item_element.text = item
-        tree = ET.ElementTree(root)
-        tree.write(output_file_path, encoding='utf-8')
-'''
 
 
 def add_item(name, data_type):
