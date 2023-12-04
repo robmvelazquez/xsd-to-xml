@@ -153,6 +153,7 @@ data = {
     "isCommandAndControl": "Boolean",
     "isIntelSpecialProcessing": "Boolean"
 }
+
 root = ET.Element('items')
 element_tree = ET.ElementTree(root)
 

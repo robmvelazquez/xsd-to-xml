@@ -15,6 +15,10 @@ def redirect_output_to_xml(file_path):
     return decorator
 
 
+def escape_xml(text):
+    return text.replace("<", "&lt;").replace(">", "&gt;")
+
+
 # Prints the xml declaration and redirects the output to the xml file.
 @redirect_output_to_xml('output.xml')
 def xml_declaration(element):
@@ -75,16 +79,30 @@ def generate_random_value(data_type):
 
 @redirect_output_to_xml('output.xml')
 def print_list(data, indent=0):
-    with open('output.xml', 'a') as output_file:
-        sys.stdout = output_file
-        for key, value in data.items():
-            if isinstance(value, dict):
-                print(' ' * indent + f"{key}:")
-                print_list(value, indent + 4)
-            elif isinstance(value, list):
-                print(' ' * indent + f"{key}:")
-                for item in value:
-                    print_list(item, indent + 4)
+    for key, value in data.items():
+        if isinstance(value, dict):
+            print(f"<{key}>")
+            for inner_key, inner_value in value.items():
+                if isinstance(inner_value, dict):
+                    print(' ' * 4 + f"<{inner_key}>")
+                    for innermost_key, innermost_value in inner_value.items():
+                        print(' ' * 8 + f"<{innermost_key}>{innermost_value}</{innermost_key}>")
+                    print(' ' * 4 + f"</{inner_key}>")
+                else:
+                    print(' ' * 4 + f"<{inner_key}>"f"{inner_value}"f"</{inner_key}>")
+            print(f"</{key}>")
+
+        elif isinstance(value, list):
+            print(' ' * 4 + f"<{key}>") # trackNumberList
+            for inner_key, inner_value in value:
+                if isinstance(inner_value, dict):
+                    print(' ' * 8 + f"<{inner_key}>")
+                    for innermost_key, innermost_value in inner_value.items():
+                        print(' ' * 8 + f"<{innermost_key}>{innermost_value}</{innermost_key}>")
+                    print(' ' * 8 + f"</{inner_key}>")
             else:
-                print(' ' * indent + f"<{key}>{generate_random_value(value)}</{key}>")
-        sys.stdout = sys.__stdout__
+                print(' ' * 4 + f"</{key}>")
+
+        else:
+            print(' ' * indent + f"<{key}>{escape_xml(str(value))}</{key}>")
+
