@@ -66,12 +66,13 @@ data = {
                     "trackNumberString": "String",
                     "trackNumberStringOtherIdentifier": "String"
                 },
-                "resourceKey": {
-                    "unitNumber": "Long",
-                    "resourceType": "int",
-                    "resourceInstance": "int"
+            },
+            "resourceKey": {
+                "unitNumber": "Long",
+                "resourceType": "int",
+                "resourceInstance": "int"
                 }
-            }
+
         },
     ],
     "altitudeSourceType": "Short",
@@ -167,4 +168,3 @@ tree = ET.parse(abstract_file_path)
 abstract = tree.getroot()
 
 output_file_path = r'C:\Users\rmvelazquez\PycharmProjects\xsd-to-xml\rm\output.xml'
-

@@ -81,28 +81,51 @@ def generate_random_value(data_type):
 def print_list(data, indent=0):
     for key, value in data.items():
         if isinstance(value, dict):
-            print(f"<{key}>")
+            print(' ' * 4 + f"<{key}>")
             for inner_key, inner_value in value.items():
                 if isinstance(inner_value, dict):
                     print(' ' * 4 + f"<{inner_key}>")
                     for innermost_key, innermost_value in inner_value.items():
-                        print(' ' * 8 + f"<{innermost_key}>{innermost_value}</{innermost_key}>")
+                        print(' ' * 8 + f"<{innermost_key}>{generate_random_value(innermost_value)}</{innermost_key}>")
                     print(' ' * 4 + f"</{inner_key}>")
                 else:
-                    print(' ' * 4 + f"<{inner_key}>"f"{inner_value}"f"</{inner_key}>")
-            print(f"</{key}>")
+                    print(' ' * 8 + f"<{inner_key}>"f"{generate_random_value(inner_value)}"f"</{inner_key}>")
+            print(' ' * 4 + f"</{key}>")
 
         elif isinstance(value, list):
-            print(' ' * 4 + f"<{key}>") # trackNumberList
-            for inner_key, inner_value in value:
-                if isinstance(inner_value, dict):
-                    print(' ' * 8 + f"<{inner_key}>")
-                    for innermost_key, innermost_value in inner_value.items():
-                        print(' ' * 8 + f"<{innermost_key}>{innermost_value}</{innermost_key}>")
-                    print(' ' * 8 + f"</{inner_key}>")
-            else:
-                print(' ' * 4 + f"</{key}>")
+            print(f"{' ' * 4}<{key}>")
+            for item in value:
+                for inner_key, inner_value in item.items():
+                    if isinstance(inner_value, dict):
+                        print(' ' * 8 + f"<{inner_key}>")
+                        for inside_key, inside_value in inner_value.items():
+                            if isinstance(inside_value, dict):
+                                print(' ' * 16 + f"<{inside_key}>")
+                                for outer_key, outer_value in inside_value.items():
+                                    print(f"{' ' * 20}<{outer_key}>{generate_random_value(outer_value)}</{outer_key}>")
+                                print(' ' * 16 + f"</{inside_key}>")
+                            else:
+                                print(f"{' ' * 16}<{inside_key}>{generate_random_value(inside_value)}</{inside_key}>")
+                        print(' ' * 8 + f"</{inner_key}>")
+            print(f"{' ' * 4}</{key}>")
 
         else:
-            print(' ' * indent + f"<{key}>{escape_xml(str(value))}</{key}>")
+            print(' ' * 4 + f"<{key}>{escape_xml(str(generate_random_value(value)))}</{key}>")
+'''
+for items in data["assignedTrackNumberString"]:
+    print(' ' + 4 + f"<{key}")
+    for dict_key, dict_value in items.items():
+        print(f"{' ' * 20}<{dict_key}>{generate_random_value(dict_value)}</{dict_key}>")
+'''
 
+'''
+                            if isinstance(nested_value, dict):
+                                for dict_key, dict_value in nested_value.items():
+                                    print(f"{' ' * 20}<{dict_key}>{generate_random_value(dict_value)}</{dict_key}>")
+                                    
+                                    
+    for key, my_list in data.items():
+        print({key})
+        for item in my_list:
+            print(item)
+'''
